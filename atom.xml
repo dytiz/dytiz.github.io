@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wuhao.me/"/>
-  <updated>2018-04-08T16:11:19.000Z</updated>
+  <updated>2018-04-15T15:58:23.000Z</updated>
   <id>http://www.wuhao.me/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线性表</title>
+    <link href="http://www.wuhao.me/2018/04/15/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+    <id>http://www.wuhao.me/2018/04/15/线性表/</id>
+    <published>2018-04-15T13:49:57.000Z</published>
+    <updated>2018-04-15T15:58:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>写作本想着不以做笔记为目的，通过学习理解，加自我改造的心得做记录。本打算这周直接上一篇二叉树的但是这周复习和实现线性表，栈队列的时间较多，就只能把二叉树的任务推迟到下周了，那就写一篇具有代表性的线性表吧！ </p><p>从名字就可以知道，这是一种像线一样的表，例如车站内排队买车票的人，学校食堂排队打饭的学生，他们都是一个排着一个，如同一根线串起来，组成的一条队列就是线性表。线性表是数据结构中最常用且最简单的一种结构，它是由零个或多个数据元素的有限序列.</p><p>线性表按物理结构划分为顺序存储和链式存储。<br>顺序存储：用一段地址连续的存储单元依次存储线性表的数据元素。<br>线性表的数据结构：</p><pre><code>class SQList{    int  []data = new int[MAX];    int length;}</code></pre><p>初始化一个成员变量list,在线性表的某个位置插入值：</p><pre><code>public boolean insert(int pos,int value) {    SQList tempList = list;    if(pos &lt; 0) {        return false;    }    //先比较，确定位置    int inserPosition = pos;    for(int i=list.length-1;i &gt; inserPosition;i--) {        list.data[i+1] = list.data[i];//最后一个往后移    }    list.data[inserPosition] = value;    list.length++;    return true;}</code></pre><p>按顺序插入：</p><pre><code>public void insert(int value) {    int inserPosition = -1;    for(int i =0;i&lt;list.length;i++) {        if(value &lt;= list.data[i]) {            inserPosition = i;            break;        }        //遍历完还没有小的就放最后面        if(i == list.length-1 &amp;&amp; inserPosition ==-1) {            inserPosition = list.length;        }    }    for(int i=list.length-1;i &gt;= inserPosition;i--) {        list.data[i+1] = list.data[i];//最后一个往后移    }    list.data[inserPosition] = value;    list.length++;}</code></pre><p>删除操作：</p><pre><code>public int delete(int pos) {    if(pos &lt; 0 || pos &gt; list.length) {        return -1;    }    int value = list.data[pos];    for(int i=pos;i&lt;list.length;i++) {        list.data[i] = list.data[i+1];    }    list.length--;    return value;}</code></pre><p>以上简化了异常流程，重点突出线性表的增删，基本上就是对数组的操作，顺序存储的优点是查找方便，通过下标直接返回其值，而插入删除需要移动大量的元素，较为不便，那么有没有更加方便插入与删除的方式呢？下面来介绍增删方便的链表结构：</p><p>链表是由一个或若干结点组成的结构，每个结点由数据域与指针域组成。每个结点只包含一个指针，称之为单链表，单链表的第一个结点的存储位置叫做头指针。有时为了操作方便，我们在链表的头部设置一个结点，称之为头结点。<br>结点的结构：</p><pre><code>class Node{     Object data;     Node next; }</code></pre><p>默认新建一个头结点head指向链表的头部，在结点的头部插入数据：</p><pre><code>public void insertHead(Object data) {    Node newNode = new Node(data);    if(head == null) {        head = newNode;    }else {        newNode.next = head;        head = newNode;    }}</code></pre><p>然后在结点的尾部插入：</p><pre><code>public void insertFoot(Object data) {    Node newNode = new Node(data);    if(head == null) {        head = newNode;    }else {        Node temp = head;        while(temp.next !=null) {            temp = temp.next;        }        temp.next = newNode;    }}</code></pre><p>头部的删除很简单哟，虽然写的很粗俗：</p><pre><code>public void deleteHead() {    if(head == null) {        return ;    }    head  = head.next;}</code></pre><p>尾部的删除：</p><pre><code>public void deleteFoot() {    Node temp = head;    Node pre = head;    while(temp.next!=null) {        pre = temp;        temp = temp.next;    }    pre.next = null;}</code></pre><p>获取链表的第i个数据，感觉多此一举：</p><pre><code>public Object getData(int i){    if(i &lt; 0)        return -1 ;    int j = 0;    Node temp = head;    while(j &lt; i &amp;&amp; temp.next != null) {        temp = temp.next;        j++;    }    return temp.data;    }</code></pre><p>ok,单链表的操作大致就这样。以后还有什么错的，待补充的再补上。</p><p>今日，美国以叙利亚化学武器袭击事件为由进行军事打击，而在今天上午美英法三国对叙利亚的空袭成真,表面上的“化武袭击”，但时至今日也没拿出直接证明是巴沙尔政权所为，发起战争的理由好像挺复杂的，但作为一个吃瓜群众，我们希望的是世界和平。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;写作本想着不以做笔记为目的，通过学习理解，加自我改造的心得做记录。本打算这周直接上一篇二叉树的但是这周复习和实现线性表，栈队列的时间较多，就只能把二叉树的任务推迟到下周了，那就写一篇具有代表性的线性表吧！ &lt;/p&gt;
+&lt;p&gt;从名字就可以知道，这是一种像线一样的表，例如车站内排
+      
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://www.wuhao.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>新起点，新起航</title>
