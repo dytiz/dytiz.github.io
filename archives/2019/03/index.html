@@ -12,7 +12,7 @@
     
     
     
-    <title>android简单搭建后台 | 小浩有个小小理想</title>
+    <title>archive_a | 小浩有个小小理想</title>
     <link href=”http://www.wuhao.me“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -115,7 +115,7 @@
                 
                 
                 
-                <li class="">
+                <li class="current">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -144,15 +144,15 @@
                         
                         
                         <li>
-                            <a href="/tags/环境搭建/">环境搭建</a>
+                            <a href="/tags/数据结构/">数据结构</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/逆向-android/">逆向 android</a>
                         </li>
                         
                         <li>
                             <a href="/tags/日志/">日志</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/tags/数据结构/">数据结构</a>
                         </li>
                         
                         
@@ -178,34 +178,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    
-<article class="article well article-body" id="article">
+                    <article class="article well article-body" id="article-archive">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="http://www.wuhao.me">小浩有个小小理想</a>
         >
-        <span>android简单搭建后台</span>
+        <span>归档</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/04/19/android简单搭建后台/">android简单搭建后台</a>
+                <a href="/archives">归档</a>
             </h1>
-        </div>
-        <div class="tag-article">
-            
-            <span class="label label-gal">
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/环境搭建/">环境搭建</a>
-                
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-04-19
-            </span>
-            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -213,53 +198,44 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/04/19/android简单搭建后台/">android简单搭建后台</a>
+                    <a href="/archives">归档</a>
                 </h4>
             </div>
-            <p>
-                <i class="fa fa-calendar"></i> 2018-04-19
-            </p>
-            <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="/tags/环境搭建/">环境搭建</a>
-                
-                
-                
-            </p>
         </center>
     </div>
-    <div class="content-article">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>距离高考还有48天，希望每一位考生能积极备战，挥洒热血,勇于冲刺，超常发挥，进入自己理想中的大学！！！</p>
-<p>作为一名移动端开发者，主要负责的工作是对手机界面数据的展示以及交互，很少会设计到复杂，重要的业务逻辑，而这部份都是交由后台开发来处理，这样就能让手机更专注于其该做的事。</p>
-<p>做移动开发的时间也不端了，其实一直盼着自己能写接口给自己调用，也一直被这样那样的事所耽误。直到今天，我终于能静下心来实现这个小小的理想了。话不多说，扎起袖子开干！</p>
-<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h3 id="安装JDK-配置环境变量"><a href="#安装JDK-配置环境变量" class="headerlink" title="安装JDK,配置环境变量"></a>安装JDK,配置环境变量</h3><p>访问<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">ORACLE官网</a> 下载对应版本的JDK.</p>
-<p>####配置JDK环境变量<br>$:cd ~<br>$:vim .bashrc</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=~/Library/Java/jdk1.8.0_40.jdk/Contents/Home</div><div class="line">PATH=$JAVA_HOME/bin:$PATH:.</div><div class="line">CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.</div><div class="line">export JAVA_HOME</div><div class="line">export PATH</div><div class="line">export CLASSPATH</div></pre></td></tr></table></figure>
-<h3 id="Tomcat的配置"><a href="#Tomcat的配置" class="headerlink" title="Tomcat的配置"></a>Tomcat的配置</h3><p>打开 <a href="http://tomcat.apache.org/index.html" target="_blank" rel="external">Apache Tomcat</a>,选择一个Tomcal版本，下载core包(mac下载zip或tar.gz)<br><img src="/2018/04/19/android简单搭建后台/tomcat_capture.png" alt="哈哈"></p>
-<p>解压tomcat包到~/Library/,然后进入~/Library/apache-tomcat-8.5.30/bin,启动Tomcat:<br>$./startup.sh</p>
-<p>出现./startup.sh: Permission denied，则需要授予执行权限:<br>$:chomd u+x *.sh<br>然后重新执行./startup.sh 启动Tomcat,提示Tomcat started.则表示启动成功。</p>
-<p>打开浏览器输入<code>http://localhost:8080</code>进行验证，出现如下页面则表示服务已经在运行。<br><img src="/2018/04/19/android简单搭建后台/tomcat_started.png" alt="启动"></p>
-<h3 id="eclipse下载"><a href="#eclipse下载" class="headerlink" title="eclipse下载"></a>eclipse下载</h3><p> 进入<a href="https://www.eclipse.org/downloads/eclipse-packages/" target="_blank" rel="external">eclipse官网</a>,选择IDE for Java EE Development下载安装.</p>
-<h3 id="新建Java工程"><a href="#新建Java工程" class="headerlink" title="新建Java工程"></a>新建Java工程</h3><p>打开eclipse-&gt;File-&gt;New-&gt;Project,在Web下选择Dynamic Web Project<br><img src="/2018/04/19/android简单搭建后台/selectWizard.png" alt="wizard"><br>选择next<br><img src="/2018/04/19/android简单搭建后台/newProject.png" alt="project"><br>一直next,最后finish完成新建.</p>
-<h4 id="创建servlet"><a href="#创建servlet" class="headerlink" title="创建servlet"></a>创建servlet</h4><p>什么是servlet?<br> servlet是一个用来接收前端请求，响应前端请求的一个服务端程序，或称服务连接器。</p>
-<p> 接下来新建一个servlet。<br> 首先在工程的java Resources的src下new一个Servlet,输入包名，类名，继承自HttpServlet类.<br> <img src="/2018/04/19/android简单搭建后台/createServlet.png" alt="servlet"><br>选择next<br> <img src="/2018/04/19/android简单搭建后台/getmethod.png" alt="servlet"><br>点击finish，就完成了servlet的创建。这里我们可以看到默认实现了两个方法doGet和doPost。根据方法名就能知道这是get请求和post请求回调的方法。在doGet方法中加入如下代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">response.setContentType(&quot;text/html&quot;);</div><div class="line">PrintWriter out = response.getWriter();</div><div class="line">out.println(&quot;&#123;\&quot;result\&quot;:\&quot;success\&quot;&#125;&quot;);</div><div class="line">out.flush();</div><div class="line">out.close();</div></pre></td></tr></table></figure>
-<p>接下来找到WebContent-&gt;WEB_INF-&gt;web.xml文件,在web-app结点下增加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;servlet&gt;</div><div class="line">	&lt;description&gt;this is a description&lt;/description&gt;</div><div class="line">	&lt;servlet-name&gt;ServletDemo&lt;/servlet-name&gt;</div><div class="line">	&lt;servlet-class&gt;com.demo.ServletDemo&lt;/servlet-class&gt;</div><div class="line">&lt;/servlet&gt;	</div><div class="line">&lt;servlet-mapping&gt;</div><div class="line">	&lt;servlet-name&gt;ServletDemo&lt;/servlet-name&gt;</div><div class="line">	&lt;url-pattern&gt;/servlet/ServletDemo&lt;/url-pattern&gt;</div><div class="line">&lt;/servlet-mapping&gt;</div></pre></td></tr></table></figure>
-<p> 以上就增加了一个servlet并关联了一个映射，接下就可以启动服务器访问servlet了。<br>右击工程-&gt;Run As -&gt; Run On Server:<br><img src="/2018/04/19/android简单搭建后台/runOnServer.png" alt="runServer"><br>next,添加工程到configured，选中finish.服务就启动了.<br>在打开浏览器输入<code>http://localhost:8080/HelloWorld/servlet/ServletDemo</code> 就可以访问doGet方法中写入response的会返回结果了。</p>
-<p>但是我压根就不想用servlet呀，那就写个网页吧!</p>
-<p>在WebContent下新建一个html，在body中输入任意字符用以识别。<br>然后在web.xml的web-app结点下进行如下配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;welcome-file-list&gt;</div><div class="line"> &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;</div><div class="line"> &lt;/welcome-file-list&gt;</div></pre></td></tr></table></figure></p>
-<p>然后在地址栏输入<code>http://localhost:8080/HelloWorld/index.html</code> </p>
-<p>居然出现404，what? 地址找不到? 不是在web.xml都进行了配置了吗? 然后疯狂baidu，然未果，404出现的情况太多了，问大佬才知道java path有问题.</p>
-<p>右击工程-&gt;Build Path -&gt; Configure Build Path:<br>Default output folder : 工程/build/classes</p>
-<p>在 工程/WebContent/Web-INF/下创建classes文件夹， Browse选择classes文件.<br><img src="/2018/04/19/android简单搭建后台/buildPath.png" alt="runServer"><br> 在地址栏输入<code>http://localhost:8080/HelloWorld/index.html</code>，成功! </p>
-
+    <div class="content-article" style="margin-top: 30px;">
+        
+        
+            <h1 style="font-size: 24px; margin-top: 40px;">2019年</h1>
+            
+        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+            
+             
+             
+                        <a href="/2019/03/21/hello-world/">Hello World</a>
+                        <br>
+            
+             
+                        <a href="/2019/03/21/smail语法/">smail语法</a>
+                        <br>
+            
+             
+                        </div>
+                    <h1 style="font-size: 24px; margin-top: 40px;">2018年</h1>
+                    <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+                 
+             
+                        <a href="/2018/04/15/线性表/">线性表</a>
+                        <br>
+            
+             
+                        <a href="/2018/04/07/新起点，新起航/">新起点，新起航</a>
+                        <br>
+            
+                    </div>
+        
     </div>
 </article>
-
-
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -317,7 +293,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/04/19/android简单搭建后台/">android简单搭建后台</a>
+                    <a href="/2019/03/21/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/21/smail语法/">smail语法</a>
                 </span>
             </li>
             
@@ -330,12 +312,6 @@
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/04/07/新起点，新起航/">新起点，新起航</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2017/07/20/hello-world/">Hello World</a>
                 </span>
             </li>
             
@@ -357,25 +333,25 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/04/19/android简单搭建后台/">android简单搭建后台</a>
+                    <a href="/2018/04/15/线性表/">线性表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/21/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/03/21/smail语法/">smail语法</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
                     <a href="/2018/04/07/新起点，新起航/">新起点，新起航</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2017/07/20/hello-world/">Hello World</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
-                    <a href="/2018/04/15/线性表/">线性表</a>
                 </span>
             </li>
             
@@ -388,23 +364,23 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/2018/04/19/android简单搭建后台/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/archives/2019/03/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/2018/04/19/android简单搭建后台/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/archives/2019/03/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/2018/04/19/android简单搭建后台/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/archives/2019/03/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/环境搭建/" style="font-size: 18.550536046462707px;" class="tag-cloud-link">环境搭建</a>
+    <a href="/tags/数据结构/" style="font-size: 10.982474724172969px;" class="tag-cloud-link">数据结构</a>
     
-    <a href="/tags/日志/" style="font-size: 10.16173795568532px;" class="tag-cloud-link">日志</a>
+    <a href="/tags/逆向-android/" style="font-size: 9.98456990069616px;" class="tag-cloud-link">逆向 android</a>
     
-    <a href="/tags/数据结构/" style="font-size: 18.19710433059581px;" class="tag-cloud-link">数据结构</a>
+    <a href="/tags/日志/" style="font-size: 10.057451378540645px;" class="tag-cloud-link">日志</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
