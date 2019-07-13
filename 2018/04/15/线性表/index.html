@@ -8,21 +8,21 @@
   
     <meta name="keywords" content="How,How's Blog" />
   
-  <meta name="description" content="写作本想着不以做笔记为目的，通过学习理解，加自我改造的心得做记录。本打算这周直接上一篇二叉树的但是这周复习和实现线性表，栈队列的时间较多，就只能把二叉树的任务推迟到下周了，那就写一篇具有代表性的线性表吧！  从名字就可以知道，这是一种像线一样的表，例如车站内排队买车票的人，学校食堂排队打饭的学生，他们都是一个排着一个，如同一根线串起来，组成的一条队列就是线性表。线性表是数据结构中最常用且最简单的一">
+  <meta name="description" content="线性表，是一种像线一样的表，例如车站内排队买车票的人，学校食堂排队打饭的学生，他们都是一个排着一个，如同一根线串起来，组成的一条队列就是线性表。线性表是数据结构中最常用且最简单的一种结构，它是由零个或多个数据元素的有限序列. 线性表按物理结构划分为顺序存储和链式存储。顺序存储：用一段地址连续的存储单元依次存储线性表的数据元素。线性表的数据结构： class SQList{     int  []d">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性表">
 <meta property="og:url" content="http://www.haohaozaichangge.com/2018/04/15/线性表/index.html">
 <meta property="og:site_name" content="小浩有个小小理想">
-<meta property="og:description" content="写作本想着不以做笔记为目的，通过学习理解，加自我改造的心得做记录。本打算这周直接上一篇二叉树的但是这周复习和实现线性表，栈队列的时间较多，就只能把二叉树的任务推迟到下周了，那就写一篇具有代表性的线性表吧！  从名字就可以知道，这是一种像线一样的表，例如车站内排队买车票的人，学校食堂排队打饭的学生，他们都是一个排着一个，如同一根线串起来，组成的一条队列就是线性表。线性表是数据结构中最常用且最简单的一">
+<meta property="og:description" content="线性表，是一种像线一样的表，例如车站内排队买车票的人，学校食堂排队打饭的学生，他们都是一个排着一个，如同一根线串起来，组成的一条队列就是线性表。线性表是数据结构中最常用且最简单的一种结构，它是由零个或多个数据元素的有限序列. 线性表按物理结构划分为顺序存储和链式存储。顺序存储：用一段地址连续的存储单元依次存储线性表的数据元素。线性表的数据结构： class SQList{     int  []d">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-15T15:58:23.000Z">
+<meta property="og:updated_time" content="2019-07-13T14:56:31.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性表">
-<meta name="twitter:description" content="写作本想着不以做笔记为目的，通过学习理解，加自我改造的心得做记录。本打算这周直接上一篇二叉树的但是这周复习和实现线性表，栈队列的时间较多，就只能把二叉树的任务推迟到下周了，那就写一篇具有代表性的线性表吧！  从名字就可以知道，这是一种像线一样的表，例如车站内排队买车票的人，学校食堂排队打饭的学生，他们都是一个排着一个，如同一根线串起来，组成的一条队列就是线性表。线性表是数据结构中最常用且最简单的一">
+<meta name="twitter:description" content="线性表，是一种像线一样的表，例如车站内排队买车票的人，学校食堂排队打饭的学生，他们都是一个排着一个，如同一根线串起来，组成的一条队列就是线性表。线性表是数据结构中最常用且最简单的一种结构，它是由零个或多个数据元素的有限序列. 线性表按物理结构划分为顺序存储和链式存储。顺序存储：用一段地址连续的存储单元依次存储线性表的数据元素。线性表的数据结构： class SQList{     int  []d">
   
   
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="images/logo.png">
   
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
@@ -84,7 +84,7 @@
                 <div id="header-description">
                     
                     <h3>
-                        欲速则不达
+                        量力而行，有舍才有得
                     </h3>
                     
                 </div>
@@ -92,7 +92,7 @@
             <nav class="header-nav">
                 <div class="social">
                     
-                        <a title="MinHow" target="_blank" href="//wuhao.me">
+                        <a title="How" target="_blank" href="//haohaozaichangge.com">
                             <i class="fa fa-home fa-2x"></i></a>
                     
                         <a title="Github" target="_blank" href="//github.com/dytiz">
@@ -136,8 +136,7 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>写作本想着不以做笔记为目的，通过学习理解，加自我改造的心得做记录。本打算这周直接上一篇二叉树的但是这周复习和实现线性表，栈队列的时间较多，就只能把二叉树的任务推迟到下周了，那就写一篇具有代表性的线性表吧！ </p>
-<p>从名字就可以知道，这是一种像线一样的表，例如车站内排队买车票的人，学校食堂排队打饭的学生，他们都是一个排着一个，如同一根线串起来，组成的一条队列就是线性表。线性表是数据结构中最常用且最简单的一种结构，它是由零个或多个数据元素的有限序列.</p>
+            <p>线性表，是一种像线一样的表，例如车站内排队买车票的人，学校食堂排队打饭的学生，他们都是一个排着一个，如同一根线串起来，组成的一条队列就是线性表。线性表是数据结构中最常用且最简单的一种结构，它是由零个或多个数据元素的有限序列.</p>
 <p>线性表按物理结构划分为顺序存储和链式存储。<br>顺序存储：用一段地址连续的存储单元依次存储线性表的数据元素。<br>线性表的数据结构：</p>
 <pre><code>class SQList{
     int  []data = new int[MAX];
@@ -253,7 +252,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2018年04月15日 23:58</p>
+        <p>最后更新： 2019年07月13日 22:56</p>
         <p>原始链接： <a class="post-url" href="/2018/04/15/线性表/" title="线性表">http://www.haohaozaichangge.com/2018/04/15/线性表/</a></p>
         <footer>
             <a href="http://www.haohaozaichangge.com">
@@ -267,6 +266,37 @@
       
         
             
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        多少都行~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
 
         
     </div>
@@ -280,7 +310,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.haohaozaichangge.com/2018/04/15/线性表/&title=《线性表》 — 小浩有个小小理想&pic=http://www.haohaozaichangge.comimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://www.haohaozaichangge.com/2018/04/15/线性表/&title=《线性表》 — 小浩有个小小理想&pic=http://p.ananas.chaoxing.com/star/733_434c/1389782336880voplp.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -341,21 +371,16 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/03/21/smail语法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/21/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          smail语法
+          Hello World
         
       </span>
     </a>
   
-  
-    <a href="/2018/04/07/新起点，新起航/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">新起点，新起航</span>
-      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-    </a>
   
 </nav>
 
@@ -395,7 +420,7 @@
       animate: true,
       isHome: false,
       share: true,
-      reward: 0
+      reward: 1
   }
 </script>
 <div class="sidebar">
@@ -415,10 +440,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            
+            <a class="category-link" href="/categories/ping-recordes/">ping recordes</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/日志/" style="font-size: 10px;">日志</a> <a href="/tags/逆向-android/" style="font-size: 10px;">逆向 android</a>
+            <a href="/tags/日志/" style="font-size: 10px;">-日志</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -451,7 +476,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/日志/" style="font-size: 10px;">日志</a> <a href="/tags/逆向-android/" style="font-size: 10px;">逆向 android</a>
+            <a href="/tags/日志/" style="font-size: 10px;">-日志</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
         </div>
     </div>
 </div>
